@@ -1,0 +1,80 @@
+{
+	"name": "@witchcraft/nuxt-android",
+	"description": "Nuxt module for working with android (capacitor).",
+	"version": "0.0.0-private.0",
+	"repository": "witchcraftjs/nuxt-android",
+	"license": "MIT",
+	"type": "module",
+	"sideEffects": false,
+	"exports": {
+		".": {
+			"types": "./dist/types.d.mts",
+			"import": "./dist/module.mjs"
+		},
+		"./android": {
+			"types": "./dist/runtime/android/index.d.ts",
+			"import": "./dist/runtime/android/index.js"
+		},
+		"./capacitor": {
+			"require": "./src/defineCapacitorConfig.cjs",
+			"types": "./src/defineCapacitorConfig.d.ts"
+		}
+	},
+	"@comments": {
+		"exports": {
+			"./capacitor": "This is a special case because capacitor requires as cjs. Types are also hand written."
+		}
+	},
+	"files": [
+		"src",
+		"dist"
+	],
+	"scripts": {
+		"prepare": "husky && cd playground && pnpm i",
+		"build": "nuxt-module-build prepare && nuxt-module-build build && nuxi build playground",
+		"build:only": "nuxt-module-build build",
+		"dev": "nuxi dev playground",
+		"dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
+		"lint": "eslint \"{src,test,playground/app}/**/*.{ts,vue}\" \"*.{js,cjs,mjs,ts}\"",
+		"lint:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit",
+		"test": "echo no tests yet",
+		"test:watch": "vitest watch"
+	},
+	"dependencies": {
+		"@alanscodelog/utils": "^6.0.1",
+		"@nuxt/kit": "^4.0.3",
+		"@witchcraft/nuxt-utils": "^0.2.1",
+		"defu": "^6.1.4"
+	},
+	"devDependencies": {
+		"@alanscodelog/eslint-config": "^6.3.0",
+		"@alanscodelog/semantic-release-config": "^5.0.4",
+		"@alanscodelog/tsconfigs": "^6.1.0",
+		"@capacitor/cli": "^7.4.3",
+		"@nuxt/eslint-config": "^1.9.0",
+		"@nuxt/module-builder": "^1.0.2",
+		"@nuxt/schema": "^4.0.3",
+		"@nuxt/test-utils": "^3.19.2",
+		"@types/node": "latest",
+		"changelogen": "^0.6.2",
+		"eslint": "^9.34.0",
+		"husky": "^9.1.7",
+		"nuxt": "^4.0.3",
+		"typescript": "^5.8.3",
+		"vitest": "^3.2.4",
+		"vue-tsc": "^2.2.12"
+	},
+	"release": {
+		"extends": [
+			"@alanscodelog/semantic-release-config"
+		]
+	},
+	"commitlint": {
+		"extends": [
+			"@alanscodelog"
+		]
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}

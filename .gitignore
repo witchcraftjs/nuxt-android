@@ -1,0 +1,8 @@
+.nuxt
+dist
+.android
+node_modules
+playground/node_modules
+playground/.dist
+playground/.output
+playground/.nuxt

@@ -1,0 +1,38 @@
+{
+	"private": true,
+	"name": "@witchcraft/nuxt-android-playground",
+	"type": "module",
+	"scripts": {
+		"dev": "nuxi dev",
+		"build": "nuxi build",
+		"preview": "nuxt preview .dist/web",
+		"update-dep": "cd ../ && pnpm build:only && cd playground && pnpm update @witchcraft/nuxt-android",
+		"======= android": "=======",
+		"dev:android": "AUTO_OPEN=android nuxi dev --host",
+		"build:android": "BUILD_ANDROID=true nuxi build",
+		"preview:android": "pnpm cap run android -- --target Default_API_$ANDROID_API",
+		"preview:android:logs": "adb logcat -v color | grep YOUR_APPNAME --color=never | awk '{$3=$4=$6=$7=\"\"; print $0}'",
+		"android:sync:android": "node ./node_modules/@witchcraft/nuxt-android/build/syncGradleWithEnv.js"
+	},
+	"files": [
+		"dist",
+		"build"
+	],
+	"@comments": {
+		"dependencies": {
+			"@witchcraft/*(except self)": "TODO remove and properly install before publishing."
+		}
+	},
+	"dependencies": {
+		"@capacitor/android": "6.1.2",
+		"@capacitor/app": "6.0.1",
+		"@capacitor/core": "6.1.2",
+		"@witchcraft/nuxt-android": "file:../",
+		"@witchcraft/nuxt-logger": "^0.0.2",
+		"nuxt": "^4.0.3",
+		"thread-stream": "^3.1.0"
+	},
+	"devDependencies": {
+		"@capacitor/cli": "6.1.2"
+	}
+}
