@@ -14,21 +14,12 @@
 		"preview:android:logs": "adb logcat -v color | grep YOUR_APPNAME --color=never | awk '{$3=$4=$6=$7=\"\"; print $0}'",
 		"android:sync:android": "node ./node_modules/@witchcraft/nuxt-android/build/syncGradleWithEnv.js"
 	},
-	"files": [
-		"dist",
-		"build"
-	],
-	"@comments": {
-		"dependencies": {
-			"@witchcraft/*(except self)": "TODO remove and properly install before publishing."
-		}
-	},
 	"dependencies": {
-		"@capacitor/android": "6.1.2",
-		"@capacitor/app": "6.0.1",
-		"@capacitor/core": "6.1.2",
-		"@witchcraft/nuxt-android": "file:../",
-		"@witchcraft/nuxt-logger": "^0.0.2",
+		"@capacitor/android": "^7.4.3",
+		"@capacitor/app": "^7.1.0",
+		"@capacitor/core": "^7.4.3",
+		"@witchcraft/nuxt-android": "^0.0.2",
+		"@witchcraft/nuxt-logger": "^0.0.6",
 		"nuxt": "^4.0.3",
 		"thread-stream": "^3.1.0"
 	},
