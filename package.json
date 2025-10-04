@@ -1,7 +1,7 @@
 {
 	"name": "@witchcraft/nuxt-android",
 	"description": "Nuxt module for working with android (capacitor).",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"repository": "witchcraftjs/nuxt-android",
 	"license": "MIT",
 	"type": "module",
