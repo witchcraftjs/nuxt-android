@@ -6,7 +6,6 @@
 		"dev": "nuxi dev",
 		"build": "nuxi build",
 		"preview": "nuxt preview .dist/web",
-		"update-dep": "cd ../ && pnpm build:only && cd playground && pnpm update @witchcraft/nuxt-android",
 		"======= android": "=======",
 		"dev:android": "AUTO_OPEN=android nuxi dev --host",
 		"build:android": "BUILD_ANDROID=true nuxi build",
@@ -15,15 +14,15 @@
 		"android:sync:android": "node ./node_modules/@witchcraft/nuxt-android/build/syncGradleWithEnv.js"
 	},
 	"dependencies": {
-		"@capacitor/android": "^7.4.3",
-		"@capacitor/app": "^7.1.0",
-		"@capacitor/core": "^7.4.3",
-		"@witchcraft/nuxt-android": "^0.0.2",
-		"@witchcraft/nuxt-logger": "^0.0.6",
-		"nuxt": "^4.0.3",
-		"thread-stream": "^3.1.0"
+		"@capacitor/android": "catalog:",
+		"@capacitor/app": "catalog:",
+		"@capacitor/core": "catalog:",
+		"@witchcraft/nuxt-android": "catalog:",
+		"@witchcraft/nuxt-logger": "catalog:",
+		"nuxt": "catalog:",
+		"thread-stream": "catalog:"
 	},
 	"devDependencies": {
-		"@capacitor/cli": "6.1.2"
+		"@capacitor/cli": "catalog:"
 	}
 }

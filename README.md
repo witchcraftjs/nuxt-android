@@ -98,7 +98,7 @@ To build nuxt for android and also build android, set `BUILD_ANDROID=true` in th
 // pages/index.vue
 <script setup lang="ts">
 if (isNativeMobile()) {
-	navigateTo("/app")
+	await navigateTo("/app")
 }
 </script>
 
