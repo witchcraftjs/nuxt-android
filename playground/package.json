@@ -17,7 +17,7 @@
 		"@capacitor/android": "catalog:",
 		"@capacitor/app": "catalog:",
 		"@capacitor/core": "catalog:",
-		"@witchcraft/nuxt-android": "catalog:",
+		"@witchcraft/nuxt-android": "workspace:*",
 		"@witchcraft/nuxt-logger": "catalog:",
 		"nuxt": "catalog:",
 		"thread-stream": "catalog:"

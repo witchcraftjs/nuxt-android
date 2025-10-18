@@ -45,9 +45,6 @@ catalogs:
     '@nuxt/test-utils':
       specifier: ^3.19.2
       version: 3.19.2
-    '@witchcraft/nuxt-android':
-      specifier: ^0.0.2
-      version: 0.0.2
     '@witchcraft/nuxt-logger':
       specifier: ^0.0.9
       version: 0.0.9
@@ -174,8 +171,8 @@ importers:
         specifier: 'catalog:'
         version: 7.4.3
       '@witchcraft/nuxt-android':
-        specifier: 'catalog:'
-        version: 0.0.2(magicast@0.3.5)
+        specifier: workspace:*
+        version: link:..
       '@witchcraft/nuxt-logger':
         specifier: 'catalog:'
         version: 0.0.9(magicast@0.3.5)(pino-pretty@11.3.0)(pino@9.13.1)
@@ -1919,18 +1916,11 @@ packages:
   '@vue/shared@3.5.22':
     resolution: {integrity: sha512-F4yc6palwq3TT0u+FYf0Ns4Tfl9GRFURDN2gWG7L1ecIaS/4fCIuFOjMTnCyjsu/OK6vaDKLCrGAa+KvvH+h4w==}
 
-  '@witchcraft/nuxt-android@0.0.2':
-    resolution: {integrity: sha512-aVIEJeOFJ4XUauRkF8T9jcp4rf03WuUcenS7wrp0snwllHHAusAoReIfYM/jGl9tInPCLRHixs9YU3TRm/6p0Q==}
-
   '@witchcraft/nuxt-logger@0.0.9':
     resolution: {integrity: sha512-TzwxcQ7EeURHwP0PYKuetEXkx7Y0LXbnsvjFuObdGjaLCUjXCaxxAPjP6+1dvhAUJYlogi0JjZAJ84dd355uhA==}
     peerDependencies:
       pino: ^9.8.0
       pino-pretty: ^11.2.2
-
-  '@witchcraft/nuxt-utils@0.2.1':
-    resolution: {integrity: sha512-+brq+kH9WVNVRKJ4tMyAmXTpTI4m1eGuRCp1fxlb2ATF5D+1vwO9BXkO/b1QGCiuBrgmva0tnqEdxCTPP3l0jA==}
-    engines: {node: '>=20.0.0'}
 
   '@witchcraft/nuxt-utils@0.3.6':
     resolution: {integrity: sha512-+TrBV1r7/4XSjihwVy6NzLS8PBNTxkQhMDLGP5Y2NXq7bU6PW4crSHD2k/2sqU64EKtEwNGCmO1oN9DIQLLn7A==}
@@ -8097,15 +8087,6 @@ snapshots:
 
   '@vue/shared@3.5.22': {}
 
-  '@witchcraft/nuxt-android@0.0.2(magicast@0.3.5)':
-    dependencies:
-      '@alanscodelog/utils': 6.0.2
-      '@nuxt/kit': 4.1.2(magicast@0.3.5)
-      '@witchcraft/nuxt-utils': 0.2.1(magicast@0.3.5)
-      defu: 6.1.4
-    transitivePeerDependencies:
-      - magicast
-
   '@witchcraft/nuxt-logger@0.0.9(magicast@0.3.5)(pino-pretty@11.3.0)(pino@9.13.1)':
     dependencies:
       '@alanscodelog/tsconfigs': 6.2.0
@@ -8114,16 +8095,6 @@ snapshots:
       defu: 6.1.4
       pino: 9.13.1
       pino-pretty: 11.3.0
-    transitivePeerDependencies:
-      - magicast
-
-  '@witchcraft/nuxt-utils@0.2.1(magicast@0.3.5)':
-    dependencies:
-      '@alanscodelog/utils': 6.0.2
-      '@nuxt/kit': 4.1.2(magicast@0.3.5)
-      change-case: 5.4.4
-      defu: 6.1.4
-      fast-glob: 3.3.3
     transitivePeerDependencies:
       - magicast
 
