@@ -27,7 +27,7 @@ catalog:
   defu: ^6.1.4
   eslint: ^9.37.0
   husky: ^9.1.7
-  nuxt: ^4.1.2
+  nuxt: ^4.2.1
   thread-stream: ^3.1.0
   typescript: ^5.9.3
   vitest: ^3.2.4
