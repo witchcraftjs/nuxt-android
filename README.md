@@ -17,16 +17,31 @@ pnpx nuxi module add @witchcraft/nuxt-android
 
 A directory structure like the following is suggested:
 ```
-.dist/ (I prefer .dist over dist so it stays hidden and at the top)
-	├─ [platform]
-	├─ .output (nuxt output)
-	├─ release
-	├─ build (for any intermediate builds like android's)
-app/ - nuxt code
-app-android/ - contains all the android code
+
+├── .dist/ (I prefer .dist over dist so it stays hidden and at the top)/
+│   └── [platform]/
+│       ├── .output/ (nuxt output)
+│       ├── release/
+│       └── build/ (for any intermediate builds like android's)
+├── app/ - nuxt code
+└── app-android/ - contains all the android code
 ```
 
-The module provides a base capacitor config that follows the above directory structure, sets up the server to point to `VITE_DEV_URL` in dev mode, and manages signing if the proper env variables are availabel.
+The module provides a base capacitor config that follows the above directory structure when set to build the android part, but you should set the default output to go elsewhere if you're using it (though it's not required):
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+	nitro: {
+		output: {
+			dir: ".dist/web/.output",
+			serverDir: ".dist/web/.output/server",
+			publicDir: ".dist/web/.output/public"
+		}
+	}
+})
+```
+
+The module also sets up the server to point to `VITE_DEV_URL` in dev mode, and manages signing if the proper env variables are availabel.
 ```ts
 // capacitor.config.ts
 import { defineCapacitorConfig } from "@witchcraft/nuxt-android/capacitor"

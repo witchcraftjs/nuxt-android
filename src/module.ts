@@ -1,3 +1,4 @@
+import { crop } from "@alanscodelog/utils/crop"
 import { run } from "@alanscodelog/utils/run"
 import { addImportsDir, createResolver, defineNuxtModule, extendRouteRules, useLogger } from "@nuxt/kit"
 import { nuxtRemoveUneededPages, nuxtRerouteOutputTo } from "@witchcraft/nuxt-utils/utils"
@@ -183,7 +184,16 @@ export default defineNuxtModule<ModuleOptions>({
 			nuxt.hook("close", () => {
 				if (running) running.child.kill()
 			})
-			nuxtRerouteOutputTo(nuxt, nonAndroidNuxtBuildDir)
+			const nuxtOutputDir = nuxt.options.nitro?.output?.dir
+			if (nuxtOutputDir === undefined || nuxtOutputDir === ".output") {
+				logger.warn(crop`Nitro output dir is not set or set to the default, it's suggested you set it to the following when using nuxt-android:
+					nitro: {
+						output: ".dist/web/.output",
+						serverDir: ".dist/web/.output/server"
+						publicDir: ".dist/web/.output/public"
+					}
+				.`)
+			}
 		}
 		addImportsDir(resolve("runtime/utils"))
 	}
